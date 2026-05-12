@@ -7,6 +7,12 @@ Node.js services where V8's JIT (Maglev + TurboFan) is doing serious work.
 
 ---
 
+## Why?
+
+Most ESLint plugins catch bugs or enforce style. This one does something different — it catches the JavaScript patterns that look perfectly valid but silently destroy V8's ability to optimise your code. Things like deleting a property, adding a field to `this` outside a constructor, or mixing types in an array all trigger internal V8 state changes (hidden class transitions, IC pollution, elements-kind downgrades) that can't be undone at runtime. For most apps this doesn't matter, but if you're running a high-throughput Node.js service — a game server, a real-time data pipeline, a trading engine — these patterns are the difference between code that JIT-compiles well and code that quietly runs at interpreter speed. This plugin makes those patterns visible at lint time, before they ever hit production.
+
+---
+
 ## Install
 
 ```bash
@@ -49,6 +55,8 @@ module.exports = {
 ---
 
 ## Rules
+
+For detailed explanations, V8 internals, and Mermaid diagrams for each rule see [RULES.md](RULES.md).
 
 ### Object Shape & Hidden Classes
 
