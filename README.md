@@ -115,3 +115,15 @@ All rules → `error`.
 ```bash
 npm test
 ```
+
+---
+
+## License
+
+MIT © Chris Heathwood
+
+---
+
+## Credits
+
+Built with [Claude Code](https://claude.ai/code) (Anthropic).
