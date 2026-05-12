@@ -1,0 +1,27 @@
+{
+  "name": "eslint-plugin-xn",
+  "version": "0.1.0",
+  "description": "ESLint rules for V8/Node.js performance optimisation — extreme node",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "v8",
+    "performance",
+    "node",
+    "turbofan",
+    "maglev"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "jest": "^29.0.0"
+  }
+}
