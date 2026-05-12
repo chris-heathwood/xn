@@ -193,7 +193,7 @@ function log(...args) {
 V8 tracks the **element kind** of every array on a one-way downgrade lattice. Once downgraded, an array never recovers — even if you remove the problematic elements later.
 
 ```mermaid
-flowchart LR
+flowchart TD
     PS([PACKED_SMI]) --> PD([PACKED_DOUBLE])
     PD --> PE([PACKED])
     PS --> HS([HOLEY_SMI])
