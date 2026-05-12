@@ -120,10 +120,10 @@ npm test
 
 ## License
 
-MIT © Chris Heathwood
+MIT © Chris Heathwood, built with Claude (Anthropic)
 
 ---
 
 ## Credits
 
-Built with [Claude Code](https://claude.ai/code) (Anthropic).
+Created by Chris Heathwood and [Claude Code](https://claude.ai/code) (Anthropic).
