@@ -10,7 +10,6 @@ V8 represents an object's shape as a **hidden class** (also called a *map*). Eve
 
 ```mermaid
 stateDiagram-v2
-    direction LR
     Empty : Hidden Class (empty)
     WithX : Hidden Class (x)
     WithXY : Hidden Class (x, y)
@@ -110,16 +109,15 @@ const obj = Object.create(proto);
 An **inline cache (IC)** is a small per-call-site cache that records the type/shape of values seen. Monomorphic ICs (one shape) are fastest. Polymorphic ICs (2–4 shapes) are slower. Megamorphic ICs (5+ shapes) bypass the cache entirely.
 
 ```mermaid
-stateDiagram-v2
-    direction LR
-    Uninit : Uninitialized
-    Mono : Monomorphic ✅\n1 shape — fast
-    Poly : Polymorphic ⚠️\n2–4 shapes — slower
-    Mega : Megamorphic ❌\n5+ shapes — no cache
+flowchart LR
+    Uninit([Uninitialized])
+    Mono([Monomorphic ✅\n1 shape — fast])
+    Poly([Polymorphic ⚠️\n2–4 shapes — slower])
+    Mega([Megamorphic ❌\n5+ shapes — no cache])
 
-    Uninit --> Mono : first call
-    Mono --> Poly : different shape seen
-    Poly --> Mega : 5th shape seen
+    Uninit --> Mono
+    Mono -->|different shape seen| Poly
+    Poly -->|5th shape seen| Mega
 ```
 
 ---
