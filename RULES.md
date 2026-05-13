@@ -14,10 +14,10 @@ stateDiagram-v2
     WithX : Hidden Class (x)
     WithXY : Hidden Class (x, y)
 
-    Empty --> WithX : add x
-    WithX --> WithXY : add y
-    WithXY --> Dictionary : delete / setPrototypeOf
-    Dictionary : Dictionary mode ⚠️\n(slow, never recovers)
+    Empty --> WithX :  add x 
+    WithX --> WithXY :  add y 
+    WithXY --> Dictionary :  delete / setPrototypeOf 
+    Dictionary : Dictionary mode ⚠️ (slow, never recovers)
 ```
 
 ---
