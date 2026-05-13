@@ -117,7 +117,7 @@ All rules → `error`.
 
 ## What these rules can't catch (use runtime tooling instead)
 
-- **Megamorphic call sites** across files — use `--trace-ic` or [deoptigate](https://github.com/nicolo-ribaudo/deoptigate)
+- **Megamorphic call sites** across files — use `--trace-ic` or [deoptigate](https://github.com/thlorenz/deoptigate)
 - **OSR (on-stack replacement) failures** — pure runtime
 - **TurboFan inlining budget exhaustion** — V8 internal heuristic
 - **GC pause timing** — use [Node Clinic](https://clinicjs.org/) or `--trace-gc`

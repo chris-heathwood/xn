@@ -136,7 +136,7 @@ process(new Event('mouse'));
 process(new Event('key'));
 ```
 
-> **Note:** this is a static heuristic — cross-file flow and variable-tracked shapes require runtime profiling (`--trace-ic`, [deoptigate](https://github.com/nicolo-ribaudo/deoptigate)).
+> **Note:** this is a static heuristic — cross-file flow and variable-tracked shapes require runtime profiling (`--trace-ic`, [deoptigate](https://github.com/thlorenz/deoptigate)).
 
 ---
 
