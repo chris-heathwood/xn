@@ -111,9 +111,9 @@ An **inline cache (IC)** is a small per-call-site cache that records the type/sh
 ```mermaid
 flowchart TD
     Uninit([Uninitialized])
-    Mono([Monomorphic ✅\n1 shape — fast])
-    Poly([Polymorphic ⚠️\n2–4 shapes — slower])
-    Mega([Megamorphic ❌\n5+ shapes — no cache])
+    Mono([Monomorphic ✅ — 1 shape, fast])
+    Poly([Polymorphic ⚠️ — 2–4 shapes, slower])
+    Mega([Megamorphic ❌ — 5+ shapes, no cache])
 
     Uninit --> Mono
     Mono -->|different shape seen| Poly
