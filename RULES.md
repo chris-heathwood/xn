@@ -92,8 +92,10 @@ class Event {
 
 Changing an object's prototype at runtime is the most destructive operation for V8 optimisation. It invalidates every inline cache that has ever observed the object, can trigger a global deoptimisation of every function that touched it, and prevents the object from ever reaching a stable map state again.
 
+> **When this is actually fine:** setting a prototype once during application startup — before any hot code has run — is essentially zero-cost. V8 hasn't built any ICs around the object yet, so there is nothing to invalidate. The danger is mutating a prototype on an object that has already passed through hot code paths. If your codebase does intentional startup-time proto setup, disable this rule for those specific lines with `// eslint-disable-next-line xn/no-proto-mutation`.
+
 ```js
-// ❌ nuclear option for V8 ICs
+// ❌ nuclear option mid-flight — invalidates all ICs that have seen obj
 Object.setPrototypeOf(obj, newProto);
 obj.__proto__ = newProto;
 
@@ -231,6 +233,8 @@ const a = [1, undefined, 3];
 ### `xn/array-type-consistency` — warn
 
 Mixing numbers with any non-numeric value (strings, booleans, objects) forces the array into **PACKED_ELEMENTS** — the slowest non-holey kind — from the moment it is created.
+
+> **Note:** `"use strict"` does not affect this. Strict mode is about syntax safety and runtime semantics — the elements kind lattice is a V8 internal optimisation that runs independently of strict mode.
 
 ```js
 // ❌ PACKED_ELEMENTS
