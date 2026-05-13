@@ -109,7 +109,7 @@ const obj = Object.create(proto);
 An **inline cache (IC)** is a small per-call-site cache that records the type/shape of values seen. Monomorphic ICs (one shape) are fastest. Polymorphic ICs (2–4 shapes) are slower. Megamorphic ICs (5+ shapes) bypass the cache entirely.
 
 ```mermaid
-flowchart LR
+flowchart TD
     Uninit([Uninitialized])
     Mono([Monomorphic ✅\n1 shape — fast])
     Poly([Polymorphic ⚠️\n2–4 shapes — slower])
