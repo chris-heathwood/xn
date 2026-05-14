@@ -1,6 +1,6 @@
 # Rules
 
-Detailed explanations for every rule in `eslint-plugin-xn`, grouped by the V8 mechanism they protect.
+Detailed explanations for every rule in `eslint-plugin-extreme-node`, grouped by the V8 mechanism they protect.
 
 ---
 

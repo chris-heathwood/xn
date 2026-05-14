@@ -1,4 +1,4 @@
-# eslint-plugin-xn
+# eslint-plugin-extreme-node
 
 **Extreme Node** — ESLint rules for V8/Node.js performance optimisation.
 
@@ -22,40 +22,44 @@ This plugin makes those patterns visible at lint time, before they ever hit prod
 ## Install
 
 ```bash
-npm install --save-dev eslint-plugin-xn
+npm install --save-dev eslint-plugin-extreme-node
 ```
 
 ## Usage
 
 ```js
-// .eslintrc.js
-module.exports = {
-  plugins: ['xn'],
-  extends: ['plugin:xn/recommended'],
-};
+// eslint.config.js
+const xn = require('eslint-plugin-extreme-node');
+
+module.exports = [xn.configs.recommended];
 ```
 
 Or enable rules individually:
 
 ```js
-module.exports = {
-  plugins: ['xn'],
-  rules: {
-    'xn/no-delete':              'error',
-    'xn/class-transition':       'error',
-    'xn/no-proto-mutation':      'error',
-    'xn/no-sparse-array':        'error',
-    'xn/no-array-hole':          'error',
-    'xn/no-arguments':           'warn',
-    'xn/prefer-class':           'warn',
-    'xn/array-type-consistency': 'warn',
-    'xn/prefer-typed-array':     'warn',
-    'xn/no-closure-in-loop':     'warn',
-    'xn/no-object-in-loop':      'warn',
-    'xn/ic-poly':                'warn',
-    'xn/deopt':                  'warn',
+// eslint.config.js
+const xn = require('eslint-plugin-extreme-node');
+
+module.exports = [
+  {
+    plugins: { xn },
+    rules: {
+      'xn/no-delete':              'error',
+      'xn/class-transition':       'error',
+      'xn/no-proto-mutation':      'error',
+      'xn/no-sparse-array':        'error',
+      'xn/no-array-hole':          'error',
+      'xn/no-arguments':           'warn',
+      'xn/prefer-class':           'warn',
+      'xn/array-type-consistency': 'warn',
+      'xn/prefer-typed-array':     'warn',
+      'xn/no-closure-in-loop':     'warn',
+      'xn/no-object-in-loop':      'warn',
+      'xn/ic-poly':                'warn',
+      'xn/deopt':                  'warn',
+    },
   },
-};
+];
 ```
 
 ---
