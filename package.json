@@ -1,9 +1,11 @@
 {
   "name": "eslint-plugin-extreme-node",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ESLint rules for V8/Node.js performance optimisation — extreme node",
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch"
