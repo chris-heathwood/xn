@@ -144,4 +144,4 @@ MIT © Chris Heathwood, built with Claude (Anthropic)
 
 ## Credits
 
-Created by Chris Heathwood and [Claude Code](https://claude.ai/code) (Anthropic).
+Created by Chris Heathwood and [Claude Code](https://claude.ai/code) (Anthropic)
